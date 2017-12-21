@@ -1,0 +1,41 @@
+{
+    "DH": {
+        "username"    : "",
+        "password"    : "",
+        "dropshippw"  : "",
+        "partship"    : "N",
+        "backorder"   : "N",
+        "shipcarrier" : "Purolator",
+        "shipservice" : "Ground",
+        "onlybranch"  : "Toronto",
+        "branches"    : ""
+    },
+
+    "SYNNEX": {
+        "customerNo"  : "",
+        "accountNo"   : "",
+        "username"    : "",
+        "password"    : "",
+        "shipmethod"  : "WHS"
+    },
+
+    "INGRAM": {
+        "loginId"       : "",
+        "password"      : "",
+        "autoRelease"   : "H",
+        "carrierCode"   : "PI",
+        "backOrder"     : "Y",
+        "splitShipment" : "N",
+        "splitLine"     : "N"
+    ),
+
+    "TECHDATA": {
+        "username" : "",
+        "password" : ""
+    },
+
+    "ASI": {
+        "CID"  : "",
+        "CERT" : ""
+    }
+}
