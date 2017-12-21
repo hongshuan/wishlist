@@ -15,6 +15,8 @@ import (
 
 func main() {
     fmt.Println("Hello, wishlist\n")
+    cfg := LoadConfig()
+    fmt.Println(cfg)
 }
 
 func testClientsMap() {
