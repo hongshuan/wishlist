@@ -16,12 +16,13 @@ import (
 func main() {
     fmt.Println("Hello, wishlist\n")
 
-    var clients [5]common.SupplierClient
-    clients[0] = &asi.Client{}
-    clients[1] = &dandh.Client{}
-    clients[2] = &synnex.Client{}
-    clients[3] = &ingram.Client{}
-    clients[4] = &techdata.Client{}
+    var clients = []common.SupplierClient {
+        new(asi.Client),
+        new(dandh.Client),
+        new(synnex.Client),
+        &ingram.Client{},
+        &techdata.Client{},
+    }
 
     for i, c := range clients {
         c.GetPriceAvail(c.GetPrefix() + "-" + strings.Repeat(strconv.Itoa(i+1), 3))
