@@ -15,7 +15,9 @@ import (
 
 func main() {
     fmt.Println("Hello, wishlist\n")
+}
 
+func testClientsMap() {
     var clients = map[string]common.SupplierClient {
         "AS":  new(asi.Client),
         "DH":  new(dandh.Client),
@@ -24,13 +26,15 @@ func main() {
         "TD":  &techdata.Client{},
     }
 
-    i := 0
-    for k, c := range clients {
-        c.GetPriceAvail(k + "-" + strings.Repeat(strconv.Itoa(i+1), 3))
-        c.PurchaseOrder(k + "-" + strings.Repeat(strconv.Itoa(i+1), 3))
-        c.DropshipOrder(k + "-" + strings.Repeat(strconv.Itoa(i+1), 3))
-        i++;
-        fmt.Println()
+    var skulist = []string{ "AS-111", "DH-222", "SYN-333", "ING-444", "TD-555", "BAD-000" }
+    for _, sku := range skulist {
+        s := strings.Split(sku, "-")[0]
+        if c, ok := clients[s]; ok {
+            c.GetPriceAvail(sku)
+            c.PurchaseOrder(sku)
+            c.DropshipOrder(sku)
+            fmt.Println()
+        }
     }
 }
 
