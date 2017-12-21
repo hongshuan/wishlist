@@ -2,7 +2,10 @@ package main
 
 import (
     "fmt"
+    "strings"
+    "strconv"
 
+    "wishlist/suppliers/common"
     "wishlist/suppliers/asi"
     "wishlist/suppliers/dandh"
     "wishlist/suppliers/synnex"
@@ -13,6 +16,22 @@ import (
 func main() {
     fmt.Println("Hello, wishlist\n")
 
+    var clients [5]common.SupplierClient
+    clients[0] = &asi.Client{}
+    clients[1] = &dandh.Client{}
+    clients[2] = &synnex.Client{}
+    clients[3] = &ingram.Client{}
+    clients[4] = &techdata.Client{}
+
+    for i, c := range clients {
+        c.GetPriceAvail(c.GetPrefix() + "-" + strings.Repeat(strconv.Itoa(i+1), 3))
+        c.PurchaseOrder(c.GetPrefix() + "-" + strings.Repeat(strconv.Itoa(i+1), 3))
+        c.DropshipOrder(c.GetPrefix() + "-" + strings.Repeat(strconv.Itoa(i+1), 3))
+        fmt.Println()
+    }
+}
+
+func testClients() {
     c1 := &asi.Client{}
     c1.GetPriceAvail("ASI-111")
     c1.PurchaseOrder("ASI-111")

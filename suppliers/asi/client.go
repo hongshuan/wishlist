@@ -7,6 +7,10 @@ import (
 type Client struct {
 }
 
+func (c Client) GetPrefix() string {
+    return "AS"
+}
+
 func (c Client) GetPriceAvail(sku string) {
     fmt.Println("ASI GetPriceAvail", sku)
 }

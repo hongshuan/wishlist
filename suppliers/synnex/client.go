@@ -7,6 +7,10 @@ import (
 type Client struct {
 }
 
+func (c Client) GetPrefix() string {
+    return "SYN"
+}
+
 func (c Client) GetPriceAvail(sku string) {
     fmt.Println("SYN GetPriceAvail", sku)
 }

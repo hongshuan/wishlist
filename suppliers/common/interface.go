@@ -4,6 +4,7 @@ type PriceAvailResult struct {
 }
 
 type SupplierClient interface {
+    GetPrefix() string
     GetPriceAvail(sku string)
     PurchaseOrder(info string)
     DropshipOrder(info string)
