@@ -1,6 +1,9 @@
 ./main.go
+./config.go
+./config.json
 
 ./suppliers/common/interface.go
+./suppliers/common/config.go
 
 ./suppliers/asi/client.go
 ./suppliers/asi/priceAvail.go
