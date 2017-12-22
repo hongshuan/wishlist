@@ -27,7 +27,7 @@
         "backOrder"     : "Y",
         "splitShipment" : "N",
         "splitLine"     : "N"
-    ),
+    },
 
     "TECHDATA": {
         "username" : "",
