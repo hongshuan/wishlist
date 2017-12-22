@@ -1,5 +1,9 @@
 package ingram
 
+import (
+    "encoding/xml"
+)
+
 /**
  * <PNARequest>
  *   <Version>2.0</Version>

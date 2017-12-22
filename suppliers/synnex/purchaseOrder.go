@@ -1,5 +1,9 @@
 package synnex
 
+import (
+    "encoding/xml"
+)
+
 /**
  * <SynnexB2B>
  *   <Credential>

@@ -1,5 +1,9 @@
 package synnex
 
+import (
+    "encoding/xml"
+)
+
 type PriceAvailRequest struct {
     XMLName     xml.Name `xml:""`
 }

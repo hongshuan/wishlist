@@ -1,5 +1,9 @@
 package asi
 
+import (
+    "encoding/xml"
+)
+
 /**
  * <ASIOrderRequest custid="*****" custpo="701-8531915-6574603" cert="***************">
  *   <header>

@@ -1,5 +1,9 @@
 package dandh
 
+import (
+    "encoding/xml"
+)
+
 /**
  * <?xml version="1.0"?>
  * <XMLFORMPOST>

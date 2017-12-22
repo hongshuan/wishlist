@@ -1,5 +1,9 @@
 package dandh
 
+import (
+    "encoding/xml"
+)
+
 type PriceAvailRequest struct {
     XMLName     xml.Name `xml:""`
 }

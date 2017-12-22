@@ -1,5 +1,9 @@
 package techdata
 
+import (
+    "encoding/xml"
+)
+
 /**
  * <XML_PriceAvailability_Submit>
  *   <Header>

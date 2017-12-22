@@ -1,5 +1,9 @@
 package ingram
 
+import (
+    "encoding/xml"
+)
+
 /**
  * <OrderRequest>
  *   <Version>2.0</Version>
