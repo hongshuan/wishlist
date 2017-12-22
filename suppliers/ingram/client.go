@@ -2,9 +2,11 @@ package ingram
 
 import (
     "fmt"
+    "wishlist/suppliers/common"
 )
 
 type Client struct {
+    Config  common.INGConfig
 }
 
 func (c Client) GetPrefix() string {

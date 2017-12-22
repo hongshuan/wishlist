@@ -2,9 +2,11 @@ package techdata
 
 import (
     "fmt"
+    "wishlist/suppliers/common"
 )
 
 type Client struct {
+    Config  common.TDConfig
 }
 
 func (c Client) GetPrefix() string {

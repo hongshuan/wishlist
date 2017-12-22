@@ -15,9 +15,26 @@ import (
 
 func main() {
     fmt.Println("Hello, wishlist\n")
+
     cfg := LoadConfig()
-    fmt.Printf("%+v\n", cfg)
-    fmt.Println(cfg.DH.ShipCarrier)
+    var clients = map[string]common.SupplierClient {
+        "AS":  &asi.Client{Config: cfg.ASI},
+        "DH":  &dandh.Client{Config: cfg.DH},
+        "SYN": &synnex.Client{Config: cfg.SYN},
+        "ING": &ingram.Client{Config: cfg.ING},
+        "TD":  &techdata.Client{Config: cfg.TD},
+    }
+
+    var skulist = []string{ "AS-111", "DH-222", "SYN-333", "ING-444", "TD-555", "BAD-000" }
+    for _, sku := range skulist {
+        s := strings.Split(sku, "-")[0]
+        if c, ok := clients[s]; ok {
+            c.GetPriceAvail(sku)
+            c.PurchaseOrder(sku)
+            c.DropshipOrder(sku)
+            fmt.Println()
+        }
+    }
 }
 
 func testClientsMap() {

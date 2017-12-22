@@ -2,9 +2,11 @@ package asi
 
 import (
     "fmt"
+    "wishlist/suppliers/common"
 )
 
 type Client struct {
+    Config  common.ASIConfig
 }
 
 func (c Client) GetPrefix() string {

@@ -5,54 +5,16 @@ import (
     "fmt"
     "io/ioutil"
     "os"
+
+    "wishlist/suppliers/common"
 )
 
-type DHConfig struct {
-    Username      string `json:"username"`
-    Password      string `json:"password"`
-    DropShipPW    string `json:"dropshippw"`
-    PartShip      string `json:"partship"`
-    BackOrder     string `json:"backorder"`
-    ShipCarrier   string `json:"shipcarrier"`
-    ShipService   string `json:"shipservice"`
-    OnlyBranch    string `json:"onlybranch"`
-    Branches      string `json:"branches"`
-}
-
-type SYNConfig struct {
-    CustomerNo    string `json:"customerNo"`
-    AccountNo     string `json:"accountNo"`
-    Username      string `json:"username"`
-    Password      string `json:"password"`
-    ShipMethod    string `json:"shipmethod"`
-}
-
-type INGConfig struct {
-    LoginId       string `json:"loginId"`
-    Password      string `json:"password"`
-    AutoRelease   string `json:"autoRelease"`
-    CarrierCode   string `json:"carrierCode"`
-    BackOrder     string `json:"backOrder"`
-    SplitShipment string `json:"splitShipment"`
-    SplitLine     string `json:"splitLine"`
-}
-
-type TDConfig struct {
-    Username      string `json:"username"`
-    Password      string `json:"password"`
-}
-
-type ASConfig struct {
-    CID           string `json:"CID"`
-    Cert          string `json:"CERT"`
-}
-
 type Config struct {
-    DH   DHConfig   `json:"DH"`
-    SYN  SYNConfig  `json:"SYNNEX"`
-    ING  INGConfig  `json:"INGRAM"`
-    TD   TDConfig   `json:"TECHDATA"`
-    ASI  ASConfig   `json:"ASI"`
+    DH   common.DHConfig   `json:"DH"`
+    SYN  common.SYNConfig  `json:"SYNNEX"`
+    ING  common.INGConfig  `json:"INGRAM"`
+    TD   common.TDConfig   `json:"TECHDATA"`
+    ASI  common.ASIConfig  `json:"ASI"`
 }
 
 func LoadConfig() Config {
@@ -62,7 +24,15 @@ func LoadConfig() Config {
         os.Exit(1)
     }
 
-    var c Config
-    json.Unmarshal(raw, &c)
-    return c
+    var cfg Config
+    json.Unmarshal(raw, &cfg)
+    if err != nil {
+        fmt.Println(err.Error())
+        os.Exit(1)
+    }
+
+    //fmt.Printf("%+v\n", cfg)
+    //fmt.Println(cfg.DH.ShipCarrier)
+
+    return cfg
 }

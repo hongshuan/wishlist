@@ -2,9 +2,11 @@ package synnex
 
 import (
     "fmt"
+    "wishlist/suppliers/common"
 )
 
 type Client struct {
+    Config  common.SYNConfig
 }
 
 func (c Client) GetPrefix() string {

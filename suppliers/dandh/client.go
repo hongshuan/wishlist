@@ -2,9 +2,11 @@ package dandh
 
 import (
     "fmt"
+    "wishlist/suppliers/common"
 )
 
 type Client struct {
+    Config  common.DHConfig
 }
 
 func (c Client) GetPrefix() string {
