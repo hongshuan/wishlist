@@ -5,6 +5,10 @@ import (
     "wishlist/suppliers/common"
 )
 
+const PA_PROD_URL = "https://newport.ingrammicro.com/mustang"
+const PO_PROD_URL = "https://newport.ingrammicro.com/mustang"
+const OS_PROD_URL = "https://newport.ingrammicro.com/mustang"
+
 type Client struct {
     Config  common.INGConfig
 }

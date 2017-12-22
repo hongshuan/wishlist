@@ -5,6 +5,10 @@ import (
     "wishlist/suppliers/common"
 )
 
+const PA_PROD_URL = "https://www.dandh.ca/dhXML/xmlDispatch"
+const PO_PROD_URL = "https://www.dandh.ca/dhXML/xmlDispatch"
+const OS_PROD_URL = "https://www.dandh.ca/dhXML/xmlDispatch"
+
 type Client struct {
     Config  common.DHConfig
 }

@@ -5,6 +5,12 @@ import (
     "wishlist/suppliers/common"
 )
 
+const PA_TEST_URL = "https://testec.synnex.ca/SynnexXML/PriceAvailability"
+const PA_PROD_URL = "https://ec.synnex.ca/SynnexXML/PriceAvailability"
+
+const PO_TEST_URL = "https://testec.synnex.ca/SynnexXML/PO"
+const PO_PROD_URL = "https://ec.synnex.ca/SynnexXML/PO"
+
 type Client struct {
     Config  common.SYNConfig
 }
