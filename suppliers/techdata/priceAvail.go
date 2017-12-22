@@ -21,7 +21,7 @@ package techdata
  */
 
 type PriceAvailRequest struct {
-    XMLName     xml.Name `xml:""`
+    XMLName     xml.Name `xml:"XML_PriceAvailability_Submit"`
 }
 
 /**
@@ -59,5 +59,5 @@ type PriceAvailRequest struct {
  */
 
 type PriceAvailResponse struct {
-    XMLName     xml.Name `xml:""`
+    XMLName     xml.Name `xml:"XML_PriceAvailability_Response"`
 }

@@ -37,7 +37,8 @@ package dandh
  */
 
 type PurchaseOrderRequest struct {
-    XMLName     xml.Name `xml:""`
+    XMLName     xml.Name `xml:"XMLFORMPOST"`
+    Request     string   `xml:"REQUEST"`
 }
 
 /**
@@ -48,5 +49,7 @@ type PurchaseOrderRequest struct {
  */
 
 type PurchaseOrderResponse struct {
-    XMLName     xml.Name `xml:""`
+    XMLName     xml.Name `xml:"XMLRESPONSE"`
+    OrderNum    string   `xml:"ORDERNUM"`
+    Status      string   `xml:"STATUS"`
 }

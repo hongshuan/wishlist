@@ -25,5 +25,6 @@ type PriceAvailRequest struct {
  */
 
 type PriceAvailResponse struct {
-    XMLName     xml.Name `xml:""`
+    XMLName     xml.Name `xml:"XMLRESPONSE"`
+    Status      string   `xml:"STATUS"`
 }

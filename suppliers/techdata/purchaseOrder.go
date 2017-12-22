@@ -74,7 +74,7 @@ package techdata
  */
 
 type PurchaseOrderRequest struct {
-    XMLName     xml.Name `xml:""`
+    XMLName     xml.Name `xml:"XML_Order_Submit"`
 }
 
 /**
@@ -94,5 +94,5 @@ type PurchaseOrderRequest struct {
  */
 
 type PurchaseOrderResponse struct {
-    XMLName     xml.Name `xml:""`
+    XMLName     xml.Name `xml:"XML_Order_Response"`
 }

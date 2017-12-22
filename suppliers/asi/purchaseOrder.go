@@ -30,7 +30,7 @@ package asi
  */
 
 type PurchaseOrderRequest struct {
-    XMLName     xml.Name `xml:""`
+    XMLName     xml.Name `xml:"ASIOrderRequest"`
 }
 
 /**
@@ -41,5 +41,6 @@ type PurchaseOrderRequest struct {
  * </ASIOrderReply>
  */
 type PurchaseOrderResponse struct {
-    XMLName     xml.Name `xml:""`
+    XMLName     xml.Name `xml:"ASIOrderReply"`
+    OrderId     string   `xml:"order>orderid"`
 }

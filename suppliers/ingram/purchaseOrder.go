@@ -58,7 +58,7 @@ package ingram
  */
 
 type PurchaseOrderRequest struct {
-    XMLName     xml.Name `xml:""`
+    XMLName     xml.Name `xml:"OrderRequest"`
 }
 
 /**
@@ -116,5 +116,5 @@ type PurchaseOrderRequest struct {
  */
 
 type PurchaseOrderResponse struct {
-    XMLName     xml.Name `xml:""`
+    XMLName     xml.Name `xml:"OrderResponse"`
 }

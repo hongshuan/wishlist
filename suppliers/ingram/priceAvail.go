@@ -7,8 +7,8 @@ package ingram
  *     <SenderID>MD</SenderID>
  *     <ReceiverID>YOU</ReceiverID>
  *     <CountryCode>CA</CountryCode>
- *     <LoginID>TrEv8fEbes</LoginID>
- *     <Password>YA2eQaThud</Password>
+ *     <LoginID>**********</LoginID>
+ *     <Password>**********</Password>
  *     <TransactionID>1</TransactionID>
  *   </TransactionHeader>
  *   <PNAInformation CustomerPartNumber="E0123456" Quantity="1"/>
@@ -20,7 +20,7 @@ package ingram
  */
 
 type PriceAvailRequest struct {
-    XMLName     xml.Name `xml:""`
+    XMLName     xml.Name `xml:"PNARequest"`
 }
 
 /**
@@ -60,5 +60,5 @@ type PriceAvailRequest struct {
  */
 
 type PriceAvailResponse struct {
-    XMLName     xml.Name `xml:""`
+    XMLName     xml.Name `xml:"PNAResponse"`
 }

@@ -42,7 +42,7 @@ package synnex
  */
 
 type PurchaseOrderRequest struct {
-    XMLName     xml.Name `xml:""`
+    XMLName     xml.Name `xml:"SynnexB2B"`
 }
 
 /**
@@ -69,5 +69,5 @@ type PurchaseOrderRequest struct {
  */
 
 type PurchaseOrderResponse struct {
-    XMLName     xml.Name `xml:""`
+    XMLName     xml.Name `xml:"SynnexB2B"`
 }
