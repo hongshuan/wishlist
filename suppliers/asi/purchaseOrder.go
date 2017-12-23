@@ -34,7 +34,35 @@ import (
  */
 
 type PurchaseOrderRequest struct {
-    XMLName     xml.Name `xml:"ASIOrderRequest"`
+    XMLName xml.Name `xml:"ASIOrderRequest"`
+    CustId  string   `xml:"custid,attr"`
+    CustPo  string   `xml:"custpo,attr"`
+    Cert    string   `xml:"cert,attr"`
+
+    Header struct {
+        ShipTo struct {
+            Name     string `xml:"name"`
+            Address1 string `xml:"address1"`
+            Address2 string `xml:"address2"`
+            Address3 string `xml:"address3"`
+            City     string `xml:"city"`
+            State    string `xml:"state"`
+            Zip      string `xml:"zip"`
+            Country  string `xml:"country"`
+        } `xml:"shipto"`
+
+        ShipInfo struct {
+            Via          string `xml:"via"`
+            Instructions string `xml:"instructions"`
+        } `xml:"shipinfo"`
+    } `xml:"header"`
+
+    Detail struct {
+        Sku     string  `xml:"line>sku"`
+        Qty     string  `xml:"line>qty"`
+        Price   string  `xml:"line>price"`
+        Branch  string  `xml:"line>branch"`
+    } `xml:"detail"`
 }
 
 /**
