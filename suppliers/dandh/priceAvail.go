@@ -29,6 +29,19 @@ type PriceAvailRequest struct {
  */
 
 type PriceAvailResponse struct {
-    XMLName     xml.Name `xml:"XMLRESPONSE"`
-    Status      string   `xml:"STATUS"`
+    XMLName xml.Name `xml:"XMLRESPONSE"`
+
+    Item struct {
+         PartNum   string `xml:"PARTNUM"`
+         UnitPrice string `xml:"UNITPRICE"`
+         Branches struct {
+             Name        string `xml:"BRANCH"`
+             Qty         string `xml:"QTY"`
+             InStockDate string `xml:"INSTOCKDATE"`
+         } `xml:"BRANCHQTY"`
+         TotalQty string `xml:"TOTALQTY"`
+         Message  string `xml:"MESSAGE"`
+    } `xml:"ITEM"`
+
+    Status  string `xml:"STATUS"`
 }
