@@ -24,7 +24,27 @@ import (
  */
 
 type PriceAvailRequest struct {
-    XMLName     xml.Name `xml:"PNARequest"`
+    XMLName xml.Name `xml:"PNARequest"`
+    Version string `xml:"Version"`
+
+    Header struct {
+        SenderID      string `xml:"SenderID"`
+        ReceiverID    string `xml:"ReceiverID"`
+        CountryCode   string `xml:"CountryCode"`
+        LoginID       string `xml:"LoginID"`
+        Password      string `xml:"Password"`
+        TransactionID string `xml:"TransactionID"`
+    } `xml:"TransactionHeader"`
+
+    Item struct {
+     // CPartNum string `xml:"CustomerPartNumber"`
+     // MPartNum string `xml:"ManufacturerPartNumber"`
+     // UPC      string `xml:"UPC"`
+        Sku      string `xml:"SKU,attr"`
+        Qty      string `xml:"Quantity,attr"`
+    } `xml:"PNAInformation"`
+
+    ShowDetail string `xml:"ShowDetail"`
 }
 
 /**
@@ -64,5 +84,43 @@ type PriceAvailRequest struct {
  */
 
 type PriceAvailResponse struct {
-    XMLName     xml.Name `xml:"PNAResponse"`
+    XMLName xml.Name `xml:"PNAResponse"`
+    Version string `xml:"Version"`
+
+    Header struct {
+        SenderID   string `xml:"SenderID"`
+        ReceiverID string `xml:"ReceiverID"`
+
+        ErrorStatus struct {
+            ErrorNumber string `xml:"ErrorNumber,attr"`
+        } `xml:"ErrorStatus"`
+
+        DocumentID    string `xml:"DocumentID"`
+        TransactionID string `xml:"TransactionID"`
+        TimeStamp     string `xml:"TimeStamp"`
+    } `xml:"TransactionHeader"`
+
+    Item struct {
+        Sku                          string `xml:"SKU,attr"`
+        Qty                          string `xml:"Quantity,attr"`
+        Price                        string `xml:"Price"`
+        SpecialPriceFlag             string `xml:"SpecialPriceFlag"`
+        ManufacturerPartNumber       string `xml:"ManufacturerPartNumber"`
+        ManufacturerPartNumberOccurs string `xml:"ManufacturerPartNumberOccurs"`
+        VendorNumber                 string `xml:"VendorNumber"`
+        Description                  string `xml:"Description"`
+        ReserveInventoryFlag         string `xml:"ReserveInventoryFlag"`
+        AvailableRebQty              string `xml:"AvailableRebQty"`
+
+        Branches []struct {
+            ID      string `xml:"ID,attr"`
+            Name    string `xml:"Name,attr"`
+            Qty     string `xml:"Availability"`
+            OnOrder string `xml:"OnOrder"`
+            ETADate string `xml:"ETADate"`
+        } `xml:"Branch"`
+
+        UPC string `xml:"UPC"`
+        CustomerPartNumber string `xml:"CustomerPartNumber"`
+    } `xml:"PriceAndAvailability"`
 }
