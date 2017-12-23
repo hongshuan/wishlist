@@ -10,23 +10,21 @@ type SupplierClient interface {
     DropshipOrder(info string)
 }
 
-type PriceAvailBranch struct {
-    Name     string
-    Code     string
-    Qty      string
-}
-
-type PriceAvailItem struct {
-    Sku      string
-    Status   string
-    Price    string
-    Branches []PriceAvailBranch
-}
-
 type PriceAvailResult struct {
     Status       string
     ErrorMessage string
-    Items        []PriceAvailItem
+
+    Items []struct {
+        Sku      string
+        Status   string
+        Price    string
+
+        Branches []struct {
+            Name     string
+            Code     string
+            Qty      string
+        }
+    }
 }
 
 type PurchaseOrderResult struct {
