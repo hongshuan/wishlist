@@ -28,6 +28,16 @@ type ViewData struct {
   Data    interface{}
 }
 
+var LayoutDir string = "views/layouts"
+
+func layoutFiles() []string {
+    files, err := filepath.Glob(LayoutDir + "/*.gohtml")
+    if err != nil {
+        panic(err)
+    }
+    return files
+}
+
 var flashRotator int = 0
 
 func flashes() map[string]string {  
