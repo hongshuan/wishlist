@@ -19,6 +19,10 @@ function walkxml($xml, $indent)
         codeln($indent, "type $varname struct {");
         $indent++;
         codeln($indent, "XMLName xml.Name ". '`xml:"'. $xmltag. '"`');
+        foreach($xml->attributes() as $name => $_) {
+            $varname = makeVarname($name);
+            codeln($indent, $varname. ' string `xml:"'. $name. ',attr"`');
+        }
     } else {
         codeln($indent, "$varname string ". '`xml:"'. $xmltag. '"`');
     }
